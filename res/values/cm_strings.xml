@@ -413,6 +413,10 @@
     <string name="bootanim_settings_title">Boot Animations</string>
     <string name="soundpack_settings_title">Sound Packs</string>
 
+    <!-- Performance : Force high-end graphics -->
+    <string name="pref_force_highend_gfx_title">Force high-end graphics</string>
+    <string name="pref_force_highend_gfx_summary">Enables high-end visual effects such as transparent status/navigation bar (requires reboot)</string>
+
     <!-- Kill app long-press back -->
     <string name="kill_app_longpress_back">Kill app back button</string>
     <string name="kill_app_longpress_back_summary">Kill the foreground app by long-pressing the back button</string>

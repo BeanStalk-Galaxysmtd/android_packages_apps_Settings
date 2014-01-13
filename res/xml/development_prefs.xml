@@ -137,6 +137,11 @@
             android:title="@string/allow_mock_location"
             android:summary="@string/allow_mock_location_summary"/>
 
+     <CheckBoxPreference
+        android:key="pref_force_highend_gfx"
+        android:title="@string/pref_force_highend_gfx_title"
+        android:summary="@string/pref_force_highend_gfx_summary" />
+
         <CheckBoxPreference
             android:key="allow_mock_sms"
             android:title="@string/allow_mock_sms"/>
