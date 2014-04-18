@@ -18,7 +18,6 @@ package com.android.settings;
 
 import android.app.ActionBar;
 import android.app.Activity;
-import android.app.ActivityManager;
 import android.app.ActivityManagerNative;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -170,9 +169,6 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
 
     private static final String DEVELOPMENT_SHORTCUT_KEY = "development_shortcut";
 
-    private static final String FORCE_HIGHEND_GFX_PREF = "pref_force_highend_gfx";
-    private static final String FORCE_HIGHEND_GFX_PERSIST_PROP = "persist.sys.force_highendgfx";
-
     private static final String KEY_CHAMBER_OF_SECRETS = "chamber_of_secrets";
     private static final String KEY_CHAMBER_OF_UNLOCKED_SECRETS =
             "chamber_of_unlocked_secrets";
@@ -230,7 +226,6 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
     private ListPreference mAnimatorDurationScale;
     private ListPreference mOverlayDisplayDevices;
     private ListPreference mOpenGLTraces;
-    private CheckBoxPreference mForceHighEndGfx;
 
     private CheckBoxPreference mImmediatelyDestroyActivities;
     private ListPreference mAppProcessLimit;
@@ -244,7 +239,6 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
     private CheckBoxPreference mAdvancedReboot;
 
     private CheckBoxPreference mDevelopmentShortcut;
-
 
     private Preference mChamber;
     private CheckBoxPreference mChamberUnlocked;
@@ -318,15 +312,6 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
         mAllPrefs.add(mPassword);
         mAdvancedReboot = findAndInitCheckboxPref(ADVANCED_REBOOT_KEY);
         mDevelopmentShortcut = findAndInitCheckboxPref(DEVELOPMENT_SHORTCUT_KEY);
-
-        if (ActivityManager.isLowRamDeviceStatic()) {
-            mForceHighEndGfx = (CheckBoxPreference) prefSet.findPreference(FORCE_HIGHEND_GFX_PREF);
-	    String forceHighendGfx = SystemProperties.get(FORCE_HIGHEND_GFX_PERSIST_PROP, "false");
-            mForceHighEndGfx.setChecked("true".equals(forceHighendGfx));
-	} else {
-            prefSet.removePreference(findPreference(FORCE_HIGHEND_GFX_PREF));
-        }
-
 
         if (!android.os.Process.myUserHandle().equals(UserHandle.OWNER)) {
             disableForUser(mEnableAdb);
@@ -1442,9 +1427,6 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
                 mVerifyAppsOverUsb.setChecked(false);
                 updateBugreportOptions();
             }
-        } else if (preference == mForceHighEndGfx) {
-	    SystemProperties.set(FORCE_HIGHEND_GFX_PERSIST_PROP,
-	            mForceHighEndGfx.isChecked() ? "true" : "false");
         } else if (preference == mAdbNotify) {
             Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.ADB_NOTIFY,

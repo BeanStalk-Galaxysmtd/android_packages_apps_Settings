@@ -71,10 +71,6 @@
     <string name="menu_new_profile">New profile</string>
     <string name="new_profile_name">\u003Cnew profile\u003E</string>
 
-	<!-- Performance : Force high-end graphics -->
-    <string name="pref_force_highend_gfx_title">Force high-end graphics</string>
-    <string name="pref_force_highend_gfx_summary">Enables high-end visual effects such as transparent status/navigation bar (requires reboot)</string>
-
     <!-- Rename Dialog -->
     <string name="rename_dialog_title">Rename</string>
     <string name="rename_dialog_message">Enter a new name</string>
