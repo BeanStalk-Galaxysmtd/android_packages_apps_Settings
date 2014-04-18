@@ -245,7 +245,6 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
 
     private CheckBoxPreference mDevelopmentShortcut;
 
-
     private Preference mChamber;
     private CheckBoxPreference mChamberUnlocked;
 
@@ -321,12 +320,11 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
 
         if (ActivityManager.isLowRamDeviceStatic()) {
             mForceHighEndGfx = (CheckBoxPreference) prefSet.findPreference(FORCE_HIGHEND_GFX_PREF);
-	    String forceHighendGfx = SystemProperties.get(FORCE_HIGHEND_GFX_PERSIST_PROP, "false");
+            String forceHighendGfx = SystemProperties.get(FORCE_HIGHEND_GFX_PERSIST_PROP, "false");
             mForceHighEndGfx.setChecked("true".equals(forceHighendGfx));
-	} else {
+        } else {
             prefSet.removePreference(findPreference(FORCE_HIGHEND_GFX_PREF));
         }
-
 
         if (!android.os.Process.myUserHandle().equals(UserHandle.OWNER)) {
             disableForUser(mEnableAdb);
@@ -1443,8 +1441,8 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
                 updateBugreportOptions();
             }
         } else if (preference == mForceHighEndGfx) {
-	    SystemProperties.set(FORCE_HIGHEND_GFX_PERSIST_PROP,
-	            mForceHighEndGfx.isChecked() ? "true" : "false");
+            SystemProperties.set(FORCE_HIGHEND_GFX_PERSIST_PROP,
+                    mForceHighEndGfx.isChecked() ? "true" : "false");
         } else if (preference == mAdbNotify) {
             Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.ADB_NOTIFY,
