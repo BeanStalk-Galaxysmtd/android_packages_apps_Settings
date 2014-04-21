@@ -959,6 +959,18 @@
     <string name="lock_numpad_random_always">Always</string>
     <string name="lock_numpad_random_on_request">On request</string>
 
+    <!-- Shake to secure -->
+    <string name="shake_to_secure_title">Shake the lockscreen to enable security</string>
+    <string name="shake_to_secure_summary">Security will be disabled after each successful unlock</string>
+    <string name="shake_to_secure_dlg_title">Warning:</string>
+    <string name="shake_to_secure_dlg_message">Your device will be insecure until you explicitly shake to enable a temporary secure lock.  Once secure: if your device is successfully unlocked it will become insecure until you shake again.</string>
+    <string name="shake_secure_timeout_title">Automatically resecure</string>
+    <string name="shake_secure_timeout_disabled">Never automatically secure</string>
+    <string name="shake_secure_timeout_1min">1 minute after screen turned off</string>
+    <string name="shake_secure_timeout_5min">5 minutes after screen turned off</string>
+    <string name="shake_secure_timeout_10min">10 minutes after screen turned off</string>
+    <string name="shake_secure_timeout_30min">30 minutes after screen turned off</string>
+
     <!-- Lock before unlock -->
     <string name="lock_before_unlock_title">Show slider before secure unlock</string>
     <string name="lock_before_unlock_summary">Show slider lockscreen before secure unlock mechanism</string>
@@ -1642,6 +1654,12 @@
     <string name="custom_recent_title">Enable Slim Recents</string>
     <string name="custom_recent_summary">Tick this box to switch between Slim/Stock RecentApps</string>
 
+    <string name="recent_panel_expanded_mode_title">Expanded mode</string>
+    <string name="recent_panel_expanded_mode_summary">Recent tasks expanded preview mode</string>
+    <string name="recent_panel_expanded_mode_auto">Auto (default)</string>
+    <string name="recent_panel_expanded_mode_always">Always</string>
+    <string name="recent_panel_expanded_mode_never">Never</string>
+
     <string name="clock_font_style_title">Font</string>
     <string name="clock_font_bold">Bold</string>
     <string name="clock_font_condensed">Condensed</string>
@@ -1782,4 +1800,36 @@
     <!-- On-the-Go -->
     <string name="power_menu_onthego_title">On-The-Go Mode</string>
     <string name="title_tile_onthego">On-The-Go</string>
+
+    <!-- Backups -->
+    <!-- Title for the BackupSettings activity and the backups category in InstalledAppDetails -->
+    <string name="backups_title">Backups</string>
+    <!-- Manage applications, label for perform backup button -->
+    <string name="restore_backup">Restore</string>
+    <!-- Manage applications, label for restore backup button -->
+    <string name="create_backup">Backup</string>
+    <!-- Title of the preference select the backup folder -->
+    <string name="backup_location_title">Backup location</string>
+    <!-- Title of the preference to change maximum number of backups kept per package -->
+    <string name="backup_history_title">Backup history</string>
+    <!-- Summary of the preference to change maximum number of backups kept per package -->
+    <string name="backup_history_summary">Maximum number of backups to keep per package.</string>
+    <!-- Title if the dialog to move existing backups to the new location after a new backup location was selected. -->
+    <string name="backup_move_new_location">Move all existing backups to the new location?</string>
+    <!-- Title of the dialog to trim backup history after backup_history preference was changed -->
+    <string name="backup_history_trim">Trim backup history?</string>
+    <!-- Toast message if backup folder is missing -->
+    <string name="backup_location_missing">Backup location is not set or deleted, using default:  %s</string>
+    <!-- Text in the notification displayed while moving backups -->
+    <string name="backup_notification_moving">Moving backups to new location</string>
+    <!-- Text in the notification displayed while deleting backups -->
+    <string name="backup_notification_deleting">Deleting backups</string>
+    <!-- Title of ManageBackupsActivity -->
+    <string name="manage_backups_activity_title">Manage Backups</string>
+    <!-- Description of ManageBackupsActivity -->
+    <string name="manage_backups_activity_description">Create, restore and delete backups</string>
+    <!-- Displayed as a toast in ManageBackupsActivity if a backup is requested, but no app selected -->
+    <string name="no_apps_selected">No apps selected</string>
+    <!-- Displayed as a toast in ManageBackupsActivity if a restore/delete is requested, but no backup selected -->
+    <string name="no_backups_selected">No backups selected</string>
 </resources>
